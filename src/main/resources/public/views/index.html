@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+
+<title>Zoo Keeper</title>
+
+<link rel="stylesheet" href="../css/bootstrap.css">
+<link rel="stylesheet" href="../css/site.css">
+
+</head>
+<body ng-app="app">
+	<div class="navbar navbar-inverse navbar-fixed-top" >
+
+		<div class="container-fluid">
+
+			<div class="navbar-header">
+
+				<button type="button" class="navbar-toggle"
+					ng-click="isCollapsed = !isCollapsed">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<div class="navbar-brand">Zoo Keeper</div>
+			</div>
+			<div class="collapse navbar-collapse" ng-init="isCollapsed = true"
+				uib-collapse="isCollapsed" ng-click="isCollapsed = !isCollapsed">
+				<ul class="nav navbar-nav">
+					<li><a ui-sref="home"  ng-cloak>Home</a></li>
+					<li><a ui-sref="enclosure" ng-cloak>Enclosure Details</a></li>
+					<li><a ui-sref="animal" ng-cloak>Animal Details</a></li>
+					<li><a ui-sref="food" ng-cloak>Food Details</a></li>
+				</ul>
+		
+			</div>
+		</div>
+	</div>
+	<section class="content">
+		<div class="container">
+								<!--  background imge  -->           <!--      //TODO  check  -->
+			<div ui-view> </div>
+		</div>
+	</section>
+
+	<footer class="container text-center">
+		<p>&copy; 2016 Catalyst</p>
+	</footer>
+
+	<script type="text/javascript" src="../vendor/jquery/dist/jquery.js"></script>
+	<script type="text/javascript" src="../vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../vendor/angular/angular.js"></script>
+	<script type="text/javascript" src="../vendor/angular-ui-router/release/angular-ui-router.min.js"></script>
+	<script type="text/javascript" src="../vendor/ui-bootstrap/ui-bootstrap-tpls-1.1.2.min.js"></script>
+
+	<!-- our base app -->
+	<script type="text/javascript" src="../app/app.js"></script>
+ 	<script type="text/javascript" src="../app/stateLogging.js"></script> 
+
+	<!-- routes -->
+	<script type="text/javascript" src="../app/routes/routes.js"></script>
+	<script type="text/javascript" src="../app/routes/myReportsRoutes.js"></script>
+
+	<!-- controllers -->
+	<script type="text/javascript" src="../app/ctrl/homeCtrl.js"></script>
+	<script type="text/javascript" src="../app/ctrl/navCtrl.js"></script>
+	<script type="text/javascript" src="../app/ctrl/foodCtrl.js"></script>
+	<script type="text/javascript" src="../app/ctrl/animalCtrl.js"></script>
+	<script type="text/javascript" src="../app/ctrl/enclosureCtrl.js"></script>
+
+	<!--  services -->
+	<script type="text/javascript" src="../app/service/foodService.js"></script>
+
+
+
+</body>
+
+</html>

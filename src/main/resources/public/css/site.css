@@ -1,0 +1,117 @@
+@media screen and (max-width: 700px){
+  .report-buttons{
+    text-align: center;
+  }
+}
+
+footer {
+    margin: 1em;
+    border-top: 1px solid #ddd;
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+    margin: 5px;
+}
+
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+.report-accordion {
+  padding: 0 15px;
+}
+
+.content {
+  margin-top: 5em;
+}
+
+.navbar {
+  background-color: #013C6B;
+}
+
+.navbar-inverse .navbar-nav > li > a, .navbar-inverse .navbar-brand {
+  color: white;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover {
+  color: #96CCFE;
+}
+
+.panel-body {
+  padding: 15px 0px;
+}
+
+.report-button {
+  width: 6em;
+}
+
+.report-buttons{
+  text-align: left;
+}
+
+.horizontal-break {
+  margin: 0 1em;
+  border-right: 1px solid #ddd;
+}
+
+.line-item-select {
+  margin-bottom: 5px;
+}
+
+.line-item {
+  border-top: 1px solid #ddd;
+  padding: 5px 0;
+  margin-bottom: 15px;
+}
+
+.add-receipt-btn,
+.remove-line-item-btn {
+  margin-top: 15px;
+}
+
+.small-legend {
+  font-size: 1em;
+}
+
+#projectDropdown {
+  display: block;
+  width: 100%;
+}
+
+.thumbnail{
+  width: 165px;
+  height: 165px;
+}
+
+.receipt-tumbnail {
+  padding-right:5px;
+}
+
+.thumbnail img {
+  max-height: 125px;
+  width: auto;
+}
+
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none !important;
+}
+
+.clickable{
+       cursor: pointer;
+       cursor: hand;
+}
+

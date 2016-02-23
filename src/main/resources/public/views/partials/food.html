@@ -1,0 +1,25 @@
+<div class="container">
+
+<!-- Form for creating a new Food Item -->
+<form id="create-FoodList" ng-submit="createFoodItem()"  class="col-md-offset-3 col-md-6 ng-pristine ng-valid" novalidate="">
+
+ <fieldset class="form-group">
+ <!-- Area for defining the Food name -->
+ <label for="food-name">Food Item Name:
+            <input type="text" ng-model="food.name" placeholder="Food Name" name="food-name"/></label>
+
+<!-- Drop down for defining the Catagory -->
+<label for="food-catogory">Catagory:
+            <select name="vendor" ng-model="food.id" ng-options="catagory as catagory.name for category in categories " required"></select>
+            </label> 
+<!--  TODO ng-options  -->
+<!-- Drop down for the Vendor -->  
+        <label for="food-vendor">Vendor:
+            <select name="vendor" ng-model="food.id" ng-options="vendor as vendor.name for vendor in vendors " required></select>
+        </label>
+<!--  TODO ng-options  -->
+
+ <button type="button" type="submit" ng-click="addFood()">Add </button>
+</fieldset>
+</form>
+</div>
