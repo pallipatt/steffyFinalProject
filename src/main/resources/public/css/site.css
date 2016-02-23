@@ -40,7 +40,7 @@ footer {
 }
 
 .navbar {
-  background-color: #013C6B;
+  background-color: green;
 }
 
 .navbar-inverse .navbar-nav > li > a, .navbar-inverse .navbar-brand {
@@ -115,3 +115,7 @@ footer {
        cursor: hand;
 }
 
+.form-group, container{
+     background-image: url("/Users/jmath9/steffyFinalProject/src/main/resources/public/images/th.jpg");
+     
+}
