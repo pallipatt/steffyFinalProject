@@ -28,5 +28,5 @@ angular.module('app').controller('foodCtrl', ['$scope', '$state','foodService', 
 			  console.log($scope.vendors);
 		  });
 	  
-	  
+	    
 }]);
