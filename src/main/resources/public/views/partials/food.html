@@ -2,26 +2,45 @@
 
 <!-- Form for creating a new Food Item -->
 <form id="create-FoodList" ng-submit="createFoodItem()"  class="col-md-offset-3 col-md-6 ng-pristine ng-valid" novalidate="">
-
  <fieldset class="form-group">
 
  <!-- Area for defining the Food name -->
  <label for="food-name">Food Item Name:
-            <input type="text" ng-model="food.name" placeholder="Food Name" name="food-name"/></label>
+        <input type="text" ng-model="food.name" placeholder="Food Name" name="food-name"/></label>
 
 <!-- Drop down for defining the Catagory -->
-<label for="food-catogory">Catagory:
-            <select name="vendor" ng-model="food.catagory" ng-options="catagory as catagory.name for category in categories " required"></select>
+<label for="food-catogory">Category:
+        <select name="category" ng-model="food.catagory" ng-options="catagory as catagory.name for catagory in categories " required"></select>
             </label> 
-<!--  TODO ng-options  -->
+
 <!-- Drop down for the Vendor -->  
         <label for="food-vendor">Vendor:
             <select name="vendor" ng-model="food.vendor" ng-options="vendor as vendor.name for vendor in vendors " required></select>
         </label>
-<!--  TODO ng-options  -->
-
  <button type="button" type="submit" ng-click="addFood()">Add </button>
 
 </fieldset>
 </form>
+<div class="container">
+  <h2>Favorite food </h2>            
+  <table class="table table-striped" ng-model='roleCheck' >
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Vendor</th>
+        <th> Category</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="food in favfood"  class="clickable">
+        <td>{{food.fav_food_id}}</td>
+        <td>{{food.name}}</td>
+        <td>{{food.vendor.name}}</td>
+        <td>{{food.catagory.name}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 </div>

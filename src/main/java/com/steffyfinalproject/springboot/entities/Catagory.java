@@ -7,40 +7,39 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-/** 
- * Table  contains all information about vendors 
- *
- */
-@Entity(name = "vendor")
-@Table(name = "vendor")
-public class Vendor {
-
+@Entity(name = "catagory")
+@Table(name = "catagory")
+public class Catagory {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "vendor_id")
-	private Integer vendor_id;
+	@Column(name = "catagory_id")
+	private Integer catagory_id;
+	
 	@Column(name = "name")
 	private String name;
-	
+
 	/**
-	 * @return the id
+	 * @return the catagory_id
 	 */
-	
-	public Integer getId() {
-		return vendor_id;
+	public Integer getCatagory_id() {
+		return catagory_id;
 	}
+
 	/**
-	 * @param id the id to set
+	 * @param catagory_id the catagory_id to set
 	 */
-	public void setId(Integer vendor_id) {
-		this.vendor_id = vendor_id;
+	public void setCatagory_id(Integer catagory_id) {
+		this.catagory_id = catagory_id;
 	}
+
 	/**
 	 * @return the name
 	 */
 	public String getName() {
 		return name;
 	}
+
 	/**
 	 * @param name the name to set
 	 */

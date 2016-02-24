@@ -106,7 +106,7 @@ footer {
   width: auto;
 }
 
-[ng\:cloak], [ng-cloak], .ng-cloak {
+[ng:cloak], [ng-cloak], .ng-cloak {
   display: none !important;
 }
 
@@ -116,6 +116,6 @@ footer {
 }
 
 .form-group, container{
-     background-image: url("/Users/jmath9/steffyFinalProject/src/main/resources/public/images/th.jpg");
+     background-image: url("../images/th.jpg");
      
 }
