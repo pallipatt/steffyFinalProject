@@ -5,28 +5,22 @@
 
      <fieldset class="form-group">
       <label for="FoodName">Food Item Name </label>
-      <input type="text"  class="form-control" name="FoodtName" id="inputFoodName" ng-model="food.name"> </input>
-    </fieldset>
+      <input type="text"  class="form-control" name="FoodtName" id="inputFoodName" ng-model="updatefood.name"> </input>
     
-<!--    <!--  //TOCHECK data-ng-init="selectedProject = projects[index]" 
-    <fieldset class="form-group">
       <label for="vendorName">Vendor Name </label>
       <select class="form-control" name="vendorName" id="inputvendorName" 
-      data-ng-init="selectedProject = projects[index]" ng-model="selectedProject" 
-      ng-options="vendor as vendor.name for vendor in vendors" > 
-      </select>     
-    </fieldset> -->
+      data-ng-init="selectedVendor = vendor[index]" ng-model="updatefood.vendor" 
+      ng-options="v as v.name for v in vendor" > 
+      </select>       
     
-    
-    <fieldset class="form-group">
       <label for="categoryName">Category Name </label>
       <select class="form-control" name="categoryName" id="inputcategoryName" 
-      data-ng-init="selectedCategory = categories[index]" ng-model="selectedCategory" 
-      ng-options="catagory as catagory.name for catagory in categories " > 
+      data-ng-init="selectedCategory = catagory[index]" ng-model="updatefood.catagory" 
+      ng-options="c as c.name for c in catagory " > 
       </select>     
     </fieldset>
     
-    <button type="button" type="submit" ng-click="updateFood()">Add </button>
+    <button type="button" type="submit" ng-click="updateFood()">Update </button>
     <!--  button  -->
  </form>
  </div>

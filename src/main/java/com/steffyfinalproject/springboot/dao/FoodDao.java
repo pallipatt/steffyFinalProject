@@ -67,4 +67,10 @@ public class FoodDao {
 		return em.createQuery("SELECT f FROM FavFood f WHERE f.favfoodid = :favfoodid", FavFood.class)
 				.setParameter("favfoodid", favfoodid).getSingleResult();
 	}
+
+	public void updatefood(FavFood favfood) {
+		em.merge(favfood);
+		em.flush();
+		
+	}
 }

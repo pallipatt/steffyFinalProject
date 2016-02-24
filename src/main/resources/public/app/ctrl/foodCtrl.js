@@ -1,7 +1,7 @@
-angular.module('app').controller('foodCtrl', ['$scope', '$state','foodService','getfavFoodDetailsID',
-                                              function( $scope, $state, foodService, getfavFoodDetailsID) {
+angular.module('app').controller('foodCtrl', ['$scope', '$state','foodService',
+                                              function( $scope, $state, foodService) {
 
-	$scope.favFoodDetailsID = getfavFoodDetailsID.data;
+	//$scope.favFoodDetailsID = getfavFoodDetailsID.data;
 	$scope.food = {};
 	$scope.favfood = {};
 	//console.log("$scope.favfood" + $scope.favfood );

@@ -33,14 +33,21 @@ angular.module('app').service('foodService', ['$http' ,'$state',
      * Call to retrieve all information about fav Food with corresponding ID
      */
     function getFavFoodDetailsID(foodid) {
-    	return $http.get(reportEndPoint + '/id' + foodid);
+    	return $http.get(reportEndPoint + '/id/' + foodid);
+    }
+    /**
+	 * Call to web service to update Favorite food item 
+	 */
+    function updateCurentFood(fooddata) {
+    	 return $http.put(reportEndPoint + "/updatefood", fooddata);
     }
     return {
     	getAllVendors : getAllVendors,
     	getAllCategory : getAllCategory,
     	createFood : createFood,
     	getAllFavFood : getAllFavFood,
-    	getFavFoodDetailsID : getFavFoodDetailsID
+    	getFavFoodDetailsID : getFavFoodDetailsID,
+    	updateCurentFood : updateCurentFood
     };
     
     

@@ -52,7 +52,7 @@ public class FoodWebServices {
 	 */
 	@RequestMapping(value="/food/favfood",method=RequestMethod.GET)
 	public List<FavFood> getfavFoodDetails(){
-		System.out.println("----------------------------->> inside Food Webservices services ");
+	//	System.out.println("----------------------------->> inside Food Webservices services ");
 		return foodService.getAllFavFood();
 	}
     /**
@@ -62,4 +62,12 @@ public class FoodWebServices {
 	public FavFood getFoodById(@PathVariable Integer foodId){
 		return foodService.getFoodById(foodId);
 	}
+	/**
+     * WebService to update fav Food with corresponding ID
+     */
+	@RequestMapping(value="/food/updatefood", method=RequestMethod.PUT)
+	public void putfood(@RequestBody FavFood favfood ) {
+		foodService.update(favfood);
+	}
+	
 }

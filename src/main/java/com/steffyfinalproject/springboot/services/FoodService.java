@@ -53,4 +53,11 @@ public class FoodService {
 	public FavFood getFoodById(Integer foodId) {
 		return foodDao.getFavFoodByID(foodId);
 	}
+	/**
+	 * Service to update details about favorite food 
+	 */
+	public void update(FavFood favfood) {
+		 foodDao.updatefood(favfood);
+		
+	}
 }

@@ -22,9 +22,9 @@
 </lable>
 
 </fieldset>
-</form>
+</form> <br>
 <div class="container">
-  <h2>Favorite food </h2>            
+  <!-- <h2>Favorite food </h2>  -->           
   <table class="table table-striped" ng-model='roleCheck' >
     <thead>
       <tr>
@@ -35,8 +35,8 @@
       </tr>
     </thead>
     <tbody> <a>
-      <tr ng-repeat="food in favfood"  ui-sref="updateFavFood({foodid : food.fav_food_id})" class="clickable"> </a>
-        <td>{{food.fav_food_id}}</td>
+      <tr ng-repeat="food in favfood"  ui-sref="updateFavFood({foodid : food.favfoodid})" class="clickable"> </a>
+        <td>{{food.favfoodid}}</td>
         <td>{{food.name}}</td>
         <td>{{food.vendor.name}}</td>
         <td>{{food.catagory.name}}</td>
