@@ -27,5 +27,10 @@ $stateProvider
 	controller: "foodCtrl"
 })
 
+.state('updateFavFood', {
+	url: '/updateFavFood/:foodid',
+	templateUrl: 'views/partials/updatefood.html',
+	controller: "foodCtrl"
+})
 
 }]);

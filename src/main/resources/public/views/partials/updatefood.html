@@ -1,0 +1,32 @@
+<div class="container">
+<!-- //TOdo  check submit  -->
+ <form name="updateForm" class="editFoodForm col-md-offset-3 col-md-6" ng-submit="submitForm(reportForm.$valid)" novalidate>
+
+
+     <fieldset class="form-group">
+      <label for="FoodName">Food Item Name </label>
+      <input type="text"  class="form-control" name="FoodtName" id="inputFoodName" ng-model="food.name"> </input>
+    </fieldset>
+    
+   <!--  //TOCHECK data-ng-init="selectedProject = projects[index]" -->
+    <fieldset class="form-group">
+      <label for="vendorName">Vendor Name </label>
+      <select class="form-control" name="vendorName" id="inputvendorName" 
+      data-ng-init="selectedProject = projects[index]" ng-model="selectedProject" 
+      ng-options="vendor as vendor.name for vendor in vendors" > 
+      </select>     
+    </fieldset>
+    
+      <!--  //TOCHECK data-ng-init="selectedProject = projects[index]" -->
+    <fieldset class="form-group">
+      <label for="vendorName">Category Name </label>
+      <select class="form-control" name="categoryName" id="inputcategoryName" 
+      data-ng-init="selectedCategory = projects[index]" ng-model="selectedCategory" 
+      ng-options="catagory as catagory.name for catagory in categories " > 
+      </select>     
+    </fieldset>
+    
+    
+    <!--  button  -->
+ </form>
+ </div>

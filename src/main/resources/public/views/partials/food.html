@@ -32,8 +32,8 @@
         <th> Category</th>
       </tr>
     </thead>
-    <tbody>
-      <tr ng-repeat="food in favfood"  class="clickable">
+    <tbody> <a>
+      <tr ng-repeat="food in favfood"  ui-sref="updateFavFood({foodid : food.fav_food_id})" class="clickable"> </a>
         <td>{{food.fav_food_id}}</td>
         <td>{{food.name}}</td>
         <td>{{food.vendor.name}}</td>
