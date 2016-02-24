@@ -1,5 +1,5 @@
-angular.module('app').service('foodService', ['$http' ,
-  function($http){
+angular.module('app').service('foodService', ['$http' ,'$state',
+  function($http, $state){
 	
 	 // local var to hold end point name
     var reportEndPoint = "/food";
@@ -20,8 +20,6 @@ angular.module('app').service('foodService', ['$http' ,
 	 * Call to web service to create Favorite food item 
 	 */
     function createFood(fooddata) {
-    	console.log("createFood foodservices.js" );
-    	console.log(fooddata);
     	 return $http.post(reportEndPoint + "/createfood", fooddata);
     }
     /**
@@ -31,12 +29,18 @@ angular.module('app').service('foodService', ['$http' ,
     	console.log("createFood foodservices.js" );
     	return $http.get(reportEndPoint + '/favfood' )
     }
-    
+    /**
+     * Call to retrieve all information about fav Food with corresponding ID
+     */
+    function getFavFoodDetailsID(foodid) {
+    	return $http.get(reportEndPoint + '/id' + foodid);
+    }
     return {
     	getAllVendors : getAllVendors,
     	getAllCategory : getAllCategory,
     	createFood : createFood,
-    	getAllFavFood : getAllFavFood
+    	getAllFavFood : getAllFavFood,
+    	getFavFoodDetailsID : getFavFoodDetailsID
     };
     
     

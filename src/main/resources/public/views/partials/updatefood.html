@@ -8,25 +8,25 @@
       <input type="text"  class="form-control" name="FoodtName" id="inputFoodName" ng-model="food.name"> </input>
     </fieldset>
     
-   <!--  //TOCHECK data-ng-init="selectedProject = projects[index]" -->
+<!--    <!--  //TOCHECK data-ng-init="selectedProject = projects[index]" 
     <fieldset class="form-group">
       <label for="vendorName">Vendor Name </label>
       <select class="form-control" name="vendorName" id="inputvendorName" 
       data-ng-init="selectedProject = projects[index]" ng-model="selectedProject" 
       ng-options="vendor as vendor.name for vendor in vendors" > 
       </select>     
-    </fieldset>
+    </fieldset> -->
     
-      <!--  //TOCHECK data-ng-init="selectedProject = projects[index]" -->
+    
     <fieldset class="form-group">
-      <label for="vendorName">Category Name </label>
+      <label for="categoryName">Category Name </label>
       <select class="form-control" name="categoryName" id="inputcategoryName" 
-      data-ng-init="selectedCategory = projects[index]" ng-model="selectedCategory" 
+      data-ng-init="selectedCategory = categories[index]" ng-model="selectedCategory" 
       ng-options="catagory as catagory.name for catagory in categories " > 
       </select>     
     </fieldset>
     
-    
+    <button type="button" type="submit" ng-click="updateFood()">Add </button>
     <!--  button  -->
  </form>
  </div>

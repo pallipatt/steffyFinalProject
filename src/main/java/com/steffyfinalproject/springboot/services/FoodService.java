@@ -47,4 +47,10 @@ public class FoodService {
 		System.out.println("----------------------->inside Food services ");
 		return foodDao.getFavFoodDetails();
 	}
+	/**
+	 * Service to get details about favorite food with corresponding ID 
+	 */
+	public FavFood getFoodById(Integer foodId) {
+		return foodDao.getFavFoodByID(foodId);
+	}
 }

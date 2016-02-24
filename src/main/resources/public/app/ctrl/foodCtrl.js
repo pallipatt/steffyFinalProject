@@ -1,9 +1,11 @@
-angular.module('app').controller('foodCtrl', ['$scope', '$state','foodService', function( $scope, $state, foodService) {
+angular.module('app').controller('foodCtrl', ['$scope', '$state','foodService','getfavFoodDetailsID',
+                                              function( $scope, $state, foodService, getfavFoodDetailsID) {
 
+	$scope.favFoodDetailsID = getfavFoodDetailsID.data;
 	$scope.food = {};
 	$scope.favfood = {};
-	console.log("$scope.favfood" + $scope.favfood );
-	console.log("$scope.favfood outside" + $scope.favfood);
+	//console.log("$scope.favfood" + $scope.favfood );
+	console.log("$scope.favFoodDetailsID-------------->" + $scope.favFoodDetailsID);
 	
 	/**
 	 * To retrieve all fav_food details  
@@ -20,7 +22,7 @@ angular.module('app').controller('foodCtrl', ['$scope', '$state','foodService', 
 	 */
 	  foodService.getAllCategory().then(function(response){	
 		  $scope.categories = response.data;
-		  console.log("$scope.categories------------>" + $scope.categories);
+		//  console.log("$scope.categories------------>" + $scope.categories);
 	  });
 	
    /**
@@ -33,15 +35,11 @@ angular.module('app').controller('foodCtrl', ['$scope', '$state','foodService', 
 	  /**
 	   * add food from the website 
 	   */
-	 $scope.addFood = function(){
-			
-			foodService.createFood($scope.food).then(function(){	
-				//console.log("$scope.food");
-			//	 console.log($scope.food + $scope.food.category +  $scope.food.vendor);
-			//	console.log("response" + response );
-	        //    $state.go('viewFoodList', ({reportid : $scope.report.reportId}));
+	 $scope.addFood = function(){		
+			foodService.createFood($scope.food).then(function(){
+				 $state.reload();
 	        }, function(response){
-	       //     console.log(response);
+	            console.log(response);
 	        });	
 		};
 	 

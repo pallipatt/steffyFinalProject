@@ -30,7 +30,13 @@ $stateProvider
 .state('updateFavFood', {
 	url: '/updateFavFood/:foodid',
 	templateUrl: 'views/partials/updatefood.html',
-	controller: "foodCtrl"
-})
+	controller: "foodCtrl",
+	resolve :{
+		 getfavFoodDetailsID: ['foodService', '$stateParams',function(foodService, $stateParams) {
+		        return foodService.getFavFoodDetailsID($stateParams.foodid);
+		        	
+		      }]
+	}
+});
 
 }]);

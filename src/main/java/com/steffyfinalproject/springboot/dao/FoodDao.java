@@ -29,7 +29,7 @@ public class FoodDao {
 	 * @return
 	 */
 	public List<Vendor> getAllVendors() {
-		return em.createQuery("SELECT c FROM vendor c", Vendor.class).getResultList();
+		return em.createQuery("SELECT c FROM Vendor c", Vendor.class).getResultList();
 	}
 
 	/**
@@ -39,7 +39,7 @@ public class FoodDao {
 	 */
 	public List<Catagory> getAllCategory() {
 
-		return em.createQuery("SELECT c FROM catagory c", Catagory.class).getResultList();
+		return em.createQuery("SELECT c FROM Catagory c", Catagory.class).getResultList();
 	}
 
 	/**
@@ -52,8 +52,19 @@ public class FoodDao {
 
 	}
 
+	/**
+	 * Function to retrieve all favorite food details
+	 */
 	public List<FavFood> getFavFoodDetails() {
-		System.out.println("-------------------------->inside FoodDao ");
-		return em.createQuery("SELECT c FROM fav_food c", FavFood.class).getResultList();
+		// System.out.println("-------------------------->inside FoodDao ");
+		return em.createQuery("SELECT c FROM FavFood c", FavFood.class).getResultList();
+	}
+
+	/**
+	 * Function to retrieve favorite food details with corresponding ID
+	 */
+	public FavFood getFavFoodByID(Integer favfoodid) {
+		return em.createQuery("SELECT f FROM FavFood f WHERE f.favfoodid = :favfoodid", FavFood.class)
+				.setParameter("favfoodid", favfoodid).getSingleResult();
 	}
 }

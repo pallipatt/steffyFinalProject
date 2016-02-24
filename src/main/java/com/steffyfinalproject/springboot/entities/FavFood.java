@@ -13,26 +13,34 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 
-@Entity (name = "fav_food")
+@Entity
+@Table(name = "favfood")
 public class FavFood {
-
-	private Integer fav_food_id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "favfoodid")
+	private Integer favfoodid;
+	@Column(name = "name")
 	private String name;
+	
+	@ManyToOne(optional = false)
+	@JoinColumn(name="vendor_id", nullable=false)
 	private Vendor vendor;
+
+	@ManyToOne(optional = false)
+	@JoinColumn(name="catagory_id")
 	private Catagory catagory;
 	/**
 	 * @return the fav_food_id
 	 */
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	public Integer getFav_food_id() {
-		return fav_food_id;
+	public Integer getFavfoodid() {
+		return favfoodid;
 	}
 	/**
 	 * @param fav_food_id the fav_food_id to set
 	 */
-	public void setFav_food_id(Integer fav_food_id) {
-		this.fav_food_id = fav_food_id;
+	public void setFavfoodid(Integer favfoodid) {
+		this.favfoodid = favfoodid;
 	}
 	/**
 	 * @return the name
@@ -49,8 +57,6 @@ public class FavFood {
 	/**
 	 * @return the vendor
 	 */
-	@ManyToOne(optional = false)
-	@JoinColumn(name="vendor_id", nullable=false)
 	public Vendor getVendor() {
 		return vendor;
 	}
@@ -63,8 +69,7 @@ public class FavFood {
 	/**
 	 * @return the category
 	 */
-	@ManyToOne(optional = false)
-	@JoinColumn(name="catagory_id")
+	
 	public Catagory getCatagory() {
 		return catagory;
 	}
@@ -78,7 +83,7 @@ public class FavFood {
 	@Override
 	public int hashCode() {
 		HashCodeBuilder builder = new HashCodeBuilder(31, 17);
-		builder.append(fav_food_id);
+		builder.append(favfoodid);
 		return builder.toHashCode();
 	}
 	@Override
@@ -89,7 +94,7 @@ public class FavFood {
 		FavFood lineItem = (FavFood) obj;
  
 		EqualsBuilder builder = new EqualsBuilder();
-		builder.append(this.fav_food_id, lineItem.fav_food_id);
+		builder.append(this.favfoodid, lineItem.favfoodid);
 		return builder.isEquals();
 		
 	}

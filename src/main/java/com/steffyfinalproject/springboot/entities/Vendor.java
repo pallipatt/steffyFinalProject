@@ -11,7 +11,7 @@ import javax.persistence.Table;
  * Table  contains all information about vendors 
  *
  */
-@Entity(name = "vendor")
+@Entity
 @Table(name = "vendor")
 public class Vendor {
 

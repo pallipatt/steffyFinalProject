@@ -3,6 +3,7 @@ package com.steffyfinalproject.springboot.webservices;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -54,5 +55,11 @@ public class FoodWebServices {
 		System.out.println("----------------------------->> inside Food Webservices services ");
 		return foodService.getAllFavFood();
 	}
-	
+    /**
+     * WebService to retrieve all information about fav Food with corresponding ID
+     */
+	@RequestMapping(value="/food/id/{foodId}", method=RequestMethod.GET)
+	public FavFood getFoodById(@PathVariable Integer foodId){
+		return foodService.getFoodById(foodId);
+	}
 }
