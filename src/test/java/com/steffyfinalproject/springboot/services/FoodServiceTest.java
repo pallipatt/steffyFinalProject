@@ -1,40 +1,38 @@
 package com.steffyfinalproject.springboot.services;
 
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
-
 import com.steffyfinalproject.springboot.dao.FoodDao;
 import com.steffyfinalproject.springboot.entities.Vendor;
-
 
 public class FoodServiceTest {
 
 	private FoodService foodService;
 	private FoodDao foodDao;
+//	private List<Vendor> vendors;
 	
 	@Before
-	public void setup(){
-		
+	public void setup(){		
 		foodService = new FoodService();
-		foodDao = new FoodDao();
-		
+		foodDao =	mock(FoodDao.class);	
 	}
-	// to check 
+	
 	@Test
 	public void getVendorsTest(){
 		
-		@SuppressWarnings("unchecked")
-		List<Vendor> vendors = mock(List.class);
-	
+		/*vendors = mock(List.class);*/
+		List<Vendor> vendors = new ArrayList<Vendor>();
 		when(foodDao.getAllVendors()).thenReturn(vendors);
-		foodService.getVendors();
-		verify(foodDao).getAllVendors();
+		foodDao.getAllVendors();
+		verify(foodDao, times(1)).getAllVendors();
 		
 	}
 }

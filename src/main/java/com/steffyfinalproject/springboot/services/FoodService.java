@@ -10,7 +10,6 @@ import com.steffyfinalproject.springboot.entities.Catagory;
 import com.steffyfinalproject.springboot.entities.FavFood;
 import com.steffyfinalproject.springboot.entities.Vendor;
 
-
 /**
  * Contains info about all Food Services
  *
@@ -20,44 +19,48 @@ public class FoodService {
 
 	@Autowired
 	FoodDao foodDao;
+
 	/**
-	 * Service to retrieve all vendors 
+	 * Service to retrieve all vendors
 	 */
 	public List<Vendor> getVendors() {
 		return foodDao.getAllVendors();
 	}
+
 	/**
-	 * Service to retrieve all categories 
+	 * Service to retrieve all categories
 	 */
 	public List<Catagory> getCategory() {
 		return foodDao.getAllCategory();
 	}
+
 	/**
-	 * Service to add favorite food  
+	 * Service to add favorite food
 	 */
 	public void addFood(FavFood favfood) {
 		System.out.println("inside Food services ");
 		foodDao.add(favfood);
-		
 	}
+
 	/**
-	 * Service to get details about favorite food  
+	 * Service to get details about favorite food
 	 */
 	public List<FavFood> getAllFavFood() {
-		System.out.println("----------------------->inside Food services ");
 		return foodDao.getFavFoodDetails();
 	}
+
 	/**
-	 * Service to get details about favorite food with corresponding ID 
+	 * Service to get details about favorite food with corresponding ID
 	 */
 	public FavFood getFoodById(Integer foodId) {
 		return foodDao.getFavFoodByID(foodId);
 	}
+
 	/**
-	 * Service to update details about favorite food 
+	 * Service to update details about favorite food
 	 */
 	public void update(FavFood favfood) {
-		 foodDao.updatefood(favfood);
-		
+		foodDao.updatefood(favfood);
+
 	}
 }
