@@ -1,26 +1,27 @@
 <div class="container">
-<!-- //TOdo  check submit  -->
- <form name="updateForm" class="editFoodForm col-md-offset-3 col-md-6" ng-submit="submitForm(reportForm.$valid)" novalidate>
+
+ <form name="updateForm" id="update-FoodList" class="editFoodForm col-md-offset-3 col-md-6" ng-submit="updateFood()" novalidate="">
 
 
      <fieldset class="form-group">
-      <label for="FoodName">Food Item Name </label>
-      <input type="text"  class="form-control" name="FoodtName" id="inputFoodName" ng-model="updatefood.name"> </input>
-    
+      <label for="FoodName">Food Item Name     </label>
+      <input type="text"  class="form-control" name="FoodtName" id="inputFoodName" ng-model="updatefood.name" required ng-pattern="/^[a-zA-Z\s]*$/" /> 
+
       <label for="vendorName">Vendor Name </label>
       <select class="form-control" name="vendorName" id="inputvendorName" 
       data-ng-init="selectedVendor = vendor[index]" ng-model="updatefood.vendor" 
-      ng-options="v as v.name for v in vendor" > 
+      ng-options="v as v.name for v in vendor" required > 
       </select>       
     
       <label for="categoryName">Category Name </label>
       <select class="form-control" name="categoryName" id="inputcategoryName" 
       data-ng-init="selectedCategory = catagory[index]" ng-model="updatefood.catagory" 
-      ng-options="c as c.name for c in catagory " > 
-      </select>     
+      ng-options="c as c.name for c in catagory " required> 
+      </select>    
+       <button type="button" type="submit" ng-disabled="updateForm.$invalid" ng-click="updateFood()">Update </button>
+    <!--  button  --> 
     </fieldset>
     
-    <button type="button" type="submit" ng-click="updateFood()">Update </button>
-    <!--  button  -->
+   
  </form>
  </div>

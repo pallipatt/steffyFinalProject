@@ -11,28 +11,60 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 import com.steffyfinalproject.springboot.dao.FoodDao;
+import com.steffyfinalproject.springboot.entities.Catagory;
+import com.steffyfinalproject.springboot.entities.FavFood;
 import com.steffyfinalproject.springboot.entities.Vendor;
 
 public class FoodServiceTest {
 
 	private FoodService foodService;
 	private FoodDao foodDao;
-//	private List<Vendor> vendors;
-	
+	// private List<Vendor> vendors;
+
 	@Before
-	public void setup(){		
+	public void setup() {
 		foodService = new FoodService();
-		foodDao =	mock(FoodDao.class);	
+		foodDao = mock(FoodDao.class);
 	}
-	
+
 	@Test
-	public void getVendorsTest(){
-		
-		/*vendors = mock(List.class);*/
+	public void getVendorsTest() {
 		List<Vendor> vendors = new ArrayList<Vendor>();
 		when(foodDao.getAllVendors()).thenReturn(vendors);
 		foodDao.getAllVendors();
 		verify(foodDao, times(1)).getAllVendors();
+
+	}
+
+	@Test
+	public void getCategoryTest() {
+		List<Catagory> catagory = new ArrayList<Catagory>();
+		when(foodDao.getAllCategory()).thenReturn(catagory);
+		foodDao.getAllCategory();
+		verify(foodDao, times(1)).getAllCategory();
+	}
+
+	@Test
+	public void addFoodTest() {
+
+	}
+
+	@Test
+	public void getAllFavFoodTest() {
+		List<FavFood> favfood = new ArrayList<FavFood>();
+		when(foodDao.getFavFoodDetails()).thenReturn(favfood);
+		foodDao.getFavFoodDetails();
+		verify(foodDao, times(1)).getFavFoodDetails();
+	}
+	
+	@Test
+	public void getFoodByIdTest() {
+		
+	
+	}
+	
+	@Test 
+	public  void updateTest(){
 		
 	}
 }

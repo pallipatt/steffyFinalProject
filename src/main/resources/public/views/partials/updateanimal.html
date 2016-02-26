@@ -1,0 +1,26 @@
+<div class="container">
+
+ <form name="updateForm" id="update-AnimalList" class="editAnimalForm col-md-offset-3 col-md-6" ng-submit="updateAnimal()" novalidate="">
+
+     <fieldset class="form-group">
+      <label for="CommonName">Common Name</label>
+      <input type="text"  class="form-control" name="CommonName" id="inputCommonName" ng-model="updateAnimal.cname" required ng-pattern="/^[a-zA-Z\s]*$/" /> 
+
+	  <label for="ScientificName">Scientific Name</label>
+      <input type="text"  class="form-control" name="ScientificName" id="inputScientificName" ng-model="updateAnimal.sname" required ng-pattern="/^[a-zA-Z\s]*$/" /> 
+
+	  <label for="favFood">Favorite Food Name </label> ({{fave}})
+      <select class="form-control" name="favFood" id="inputfavFood" 
+      ng-model="updateAnimal.favfood" 
+      ng-options="f as f.name for f in favfoods" ng-selected=" f.name == fave"  required >
+      </select>  
+      
+      <label for="animal-link"> Link </lable>
+      <input type= "url" class="form-control" ng-model="updateAnimal.link"  name="animal-link" required  />      
+    
+      <button type="button" type="submit" ng-disabled="updateForm.$invalid" ng-click="updateAnimalDetails()">Update </button>
+   
+    </fieldset>
+
+ </form>
+ </div>

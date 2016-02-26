@@ -1,0 +1,64 @@
+<div class="container" id="container1">
+
+<!-- Form for creating animal information -->
+<form name= "animalForm" id="create-animalList" ng-submit="createAnimal()"  class="col-md-offset-3 col-md-6 ng-pristine ng-valid" novalidate="">
+ <fieldset class="form-group">
+
+ <!-- Area for defining the Common name -->
+ <label for="animal-Cname">
+        <input type= "text"  ng-model="animal.cname" placeholder="Common Name" name="animal-Cname" required ng-pattern="/^[a-zA-Z\s]*$/" />
+        </label>
+
+ <!-- Area for defining the Scientific name -->
+ <label for="animal-Sname">
+        <input type= "text"  ng-model="animal.sname" placeholder="Scientific Name" name="animal-Sname" required ng-pattern="/^[a-zA-Z\s]*$/" />
+        </label>
+
+<!-- Drop down for defining the FavFood -->
+ <label for="favfood">Favourite Food:
+        <select name="favfood" ng-model="animal.favfood" ng-options="favfood as favfood.name for favfood in favfoods "  required></select>
+            </label>  
+            
+ <!-- Area for defining the informational link -->
+ <label for="animal-link">
+        <input type= "url"  ng-model="animal.link" placeholder="Informational Link" name="animal-link" required  />
+      <!--   <span style="color:red" ng-show="animalForm.animal-link.$error.required">
+        You Can't Leave This Field Empty</span>
+        <span style="color:red" ng-show="animalForm.animal-link.$error.url">
+        Sorry Not a Valid URL, Don't Forget to Use http://</span> -->
+        </label>
+
+   		<lable>
+ 			<button type="button" type="submit"  ng-disabled="animalForm.$invalid" ng-click="addAnimalDetails()">Add </button>
+		</lable>
+
+</fieldset>
+</form> <br>
+ 
+<div class="container">
+            
+  <table class="table table-striped" ng-model='roleCheck' >
+    <thead>
+      <tr>
+      <th> ID</th>
+        <th>COMMON NAME</th>
+        <th>SCIENTIFIC NAME</th>
+        <th>FAVORITE FOOD</th>
+        <th>INFO LINK</th>
+      </tr>
+    </thead>
+    <tbody> <a>
+      <tr ng-repeat="animal in animals"  ui-sref="updateAnimal({animalid : animal.animalid})" class="clickable"> </a>
+        <td>{{animal.animalid}}</td>
+        <td>{{animal.cname}}</td>
+        <td>{{animal.sname}}</td>
+        <td>{{animal.favfood.name}}</td>
+         <td> <a id="link" ng-href="{{animal.link}}">{{animal.link}}</a> </td>
+      
+      </tr>
+      
+    </tbody>
+  </table>
+</div>
+
+</div>

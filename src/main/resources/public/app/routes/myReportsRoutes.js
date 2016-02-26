@@ -1,4 +1,4 @@
-angular.module('app').config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
+/*angular.module('app').config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
 
   $stateProvider
 
@@ -63,3 +63,4 @@ angular.module('app').config(['$stateProvider', '$urlRouterProvider', function($
           controller: 'previouslyReviewedCtrl'
         });
 }]);
+*/

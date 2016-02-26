@@ -20,6 +20,9 @@ public class FoodService {
 	@Autowired
 	FoodDao foodDao;
 
+	public void setFoodDao(FoodDao foodDao) {
+		this.foodDao = foodDao;
+	}
 	/**
 	 * Service to retrieve all vendors
 	 */
@@ -38,7 +41,6 @@ public class FoodService {
 	 * Service to add favorite food
 	 */
 	public void addFood(FavFood favfood) {
-		System.out.println("inside Food services ");
 		foodDao.add(favfood);
 	}
 
@@ -60,7 +62,7 @@ public class FoodService {
 	 * Service to update details about favorite food
 	 */
 	public void update(FavFood favfood) {
-		foodDao.updatefood(favfood);
+		foodDao.updateFood(favfood);
 
 	}
 }

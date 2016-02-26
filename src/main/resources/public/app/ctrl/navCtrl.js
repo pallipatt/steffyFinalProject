@@ -1,4 +1,5 @@
-angular.module('app').controller('navCtrl', ['$scope',  '$state', function($scope, $state) {
+/*angular.module('app').controller('navCtrl', ['$scope',  '$state', function($scope, $state) {
 
     
 }]);
+*/

@@ -8,6 +8,7 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Component;
 
+import com.steffyfinalproject.springboot.entities.Animal;
 import com.steffyfinalproject.springboot.entities.Catagory;
 import com.steffyfinalproject.springboot.entities.FavFood;
 import com.steffyfinalproject.springboot.entities.Vendor;
@@ -46,7 +47,6 @@ public class FoodDao {
 	 * Function to add favorite food
 	 */
 	public void add(FavFood favfood) {
-		System.out.println("inside FoodDao ");
 		em.flush();
 		em.persist(favfood);
 
@@ -56,7 +56,6 @@ public class FoodDao {
 	 * Function to retrieve all favorite food details
 	 */
 	public List<FavFood> getFavFoodDetails() {
-		// System.out.println("-------------------------->inside FoodDao ");
 		return em.createQuery("SELECT c FROM FavFood c", FavFood.class).getResultList();
 	}
 
@@ -68,9 +67,10 @@ public class FoodDao {
 				.setParameter("favfoodid", favfoodid).getSingleResult();
 	}
 
-	public void updatefood(FavFood favfood) {
+	public void updateFood(FavFood favfood) {
 		em.merge(favfood);
 		em.flush();
 		
 	}
+
 }

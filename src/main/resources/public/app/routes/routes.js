@@ -3,12 +3,12 @@ angular.module('app').config(['$stateProvider', '$urlRouterProvider', function($
 	$urlRouterProvider.otherwise('/main');
 
 $stateProvider
-  .state('home', {
+/*  .state('home', {
     url: '/home',
     templateUrl: 'views/partials/home.html',
     controller: 'homeCtrl'
   })
-  
+  */
 .state('enclosure', {
 	url: '/enclosure',
 	templateUrl: 'views/partials/enclosure.html',
@@ -33,10 +33,7 @@ $stateProvider
 	controller: "foodupdateCtrl",
 	resolve :{
 		 getfavFoodDetailsID: ['foodService', '$stateParams',function(foodService, $stateParams) {
-			// console.log("state change ---> ");
-			// console.log(foodService.getFavFoodDetailsID($stateParams.foodid));
-		        return foodService.getFavFoodDetailsID($stateParams.foodid);
-		        	
+		        return foodService.getFavFoodDetailsID($stateParams.foodid);   	
 		      }],
 		      getCatagory: ['foodService',function(foodService){
 		    	  return foodService.getAllCategory();
@@ -44,6 +41,20 @@ $stateProvider
 		      getVendor: ['foodService',function(foodService){	    
 		    	  return foodService.getAllVendors();
 		      }],
+	}
+})
+
+.state('updateAnimal', {
+	url: '/updateAnimal/:animalid',
+	templateUrl: 'views/partials/updateanimal.html',
+	controller: "animalupdateCtrl",
+	resolve :{
+		 getAnimalDetailsID: ['animalService', '$stateParams',function(animalService, $stateParams) {
+		        return animalService.getAnimalDetailsID($stateParams.animalid);   	
+		      }],
+		      getFavFood: ['animalService',function(animalService){
+		    	  return animalService.getAllFavFood();
+		      }],	     
 	}
 });
 

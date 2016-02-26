@@ -1,16 +1,18 @@
-<div class="container">
+<div class="container" id="container1">
 
 <!-- Form for creating a new Food Item -->
-<form id="create-FoodList" ng-submit="createFoodItem()"  class="col-md-offset-3 col-md-6 ng-pristine ng-valid" novalidate="">
+<form name= "userForm" id="create-FoodList" ng-submit="createFoodItem()"  class="col-md-offset-3 col-md-6 ng-pristine ng-valid" novalidate="">
  <fieldset class="form-group">
 
  <!-- Area for defining the Food name -->
- <label for="food-name">Food Item Name:
-        <input type="text" ng-model="food.name" placeholder="Food Name" name="food-name"/></label>
+ <label for="food-name">
+        <input type= "text"  ng-model="food.name" placeholder="Food Name" name="food-name" required ng-pattern="/^[a-zA-Z]*$/" />
+        <!-- <p ng-show="userForm.food.name.$invalid && !userForm.food.name.$pristine" class="help-block">Food name is required.</p> -->
+        </label>
 
 <!-- Drop down for defining the Catagory -->
 <label for="food-catogory">Category:
-        <select name="category" ng-model="food.catagory" ng-options="catagory as catagory.name for catagory in categories " required"></select>
+        <select name="category" ng-model="food.catagory" ng-options="catagory as catagory.name for catagory in categories "  required></select>
             </label> 
 
 <!-- Drop down for the Vendor -->  
@@ -18,7 +20,7 @@
             <select name="vendor" ng-model="food.vendor" ng-options="vendor as vendor.name for vendor in vendors " required></select>
         </label>
         <lable>
- <button type="button" type="submit" ng-click="addFood()">Add </button>
+ <button type="button" type="submit" ng-disabled="userForm.$invalid"  ng-click="addFood()">Add </button>
 </lable>
 
 </fieldset>

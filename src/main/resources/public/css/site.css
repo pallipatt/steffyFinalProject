@@ -40,9 +40,12 @@ footer {
 }
 
 .navbar {
-  background-color: green;
 }
-
+fieldset.form-group{
+/*	display: inline;
+   width: 600px; */
+/*   height: 50px; */
+}
 .navbar-inverse .navbar-nav > li > a, .navbar-inverse .navbar-brand {
   color: white;
 }
@@ -115,7 +118,8 @@ footer {
        cursor: hand;
 }
 
-.form-group, container{
-   /*  background-image: url("../images/j.jpg"); */
+body{
+     background-image: url("../images/6.jpg"); 
      
+    background-size: cover;
 }

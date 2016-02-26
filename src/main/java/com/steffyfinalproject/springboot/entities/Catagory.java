@@ -16,7 +16,7 @@ public class Catagory {
 	@Column(name = "catagory_id")
 	private Integer catagory_id;
 	
-	@Column(name = "name")
+	@Column(name = "name" , nullable=false)
 	private String name;
 
 	/**
