@@ -15,11 +15,13 @@
       ng-options="f as f.name for f in favfoods" ng-selected=" f.name == fave"  required >
       </select>  
       
-      <label for="animal-link"> Link </lable>
-      <input type= "url" class="form-control" ng-model="updateAnimal.link"  name="animal-link" required  />      
-    <lable> </lable>
-      <button type="button" type="submit" ng-disabled="updateForm.$invalid" ng-click="updateAnimalDetails()">Update </button>
-   
+      <label for="animal-link"> Link </label>
+     
+      <input type="url" class="form-control" ng-model="updateAnimal.link"  name="animal-link" required  />      
+
+      <label>  
+      <button type="button" type="submit" ng-disabled="updateForm.$invalid" ng-click="updateAnimalDetails()">UPDATE </button>
+      </label>
     </fieldset>
 
  </form>

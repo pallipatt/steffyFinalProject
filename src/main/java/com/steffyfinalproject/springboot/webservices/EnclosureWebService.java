@@ -37,7 +37,6 @@ public class EnclosureWebService {
 	 */
 	@RequestMapping(value = "/enclosure/addEnclosure", method = RequestMethod.POST)
 	public void createEnclosure(@RequestBody Enclosure enclosure) {
-		System.out.println("inside Webservices services  XXXXX-------->  ");
 		enclosureService.addEnclosure(enclosure);
 	}
 	/**
@@ -45,7 +44,6 @@ public class EnclosureWebService {
 	 */
 	@RequestMapping(value = "/enclosure/enclosure", method = RequestMethod.GET)
 	public List<Enclosure> getEncosureDetails() {
-		System.out.println("inside Webservices services retrieve working -------->  ");
 		return enclosureService.getAllEnclosure();
 	}
 	/**
@@ -63,4 +61,14 @@ public class EnclosureWebService {
 	public void putEnclosure(@RequestBody Enclosure enclosure) {
 		enclosureService.update(enclosure);
 	}
+/**
+ * delete enclosure
+ * @param id
+ */
+	@RequestMapping(value = "/enclosure/deleteEnclosure/{id}", method = RequestMethod.PUT)
+	public void deleteEnclosure(@PathVariable Integer id) {
+		System.out.println("inside Webservices services delete --------==========================>  ");
+		enclosureService.delete(id);
+	}
+	
 }

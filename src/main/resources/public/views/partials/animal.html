@@ -29,7 +29,7 @@
         </label>
 
    		<lable>
- 			<button type="button" class= "btn-md" type="submit"  ng-disabled="animalForm.$invalid" ng-click="addAnimalDetails()">Add </button>
+ 			<button type="button" class= "btn-md" type="submit"  ng-disabled="animalForm.$invalid" ng-click="addAnimalDetails()">ADD </button>
 		</lable>
 
 </fieldset>
@@ -53,12 +53,9 @@
         <td>{{animal.cname}}</td>
         <td>{{animal.sname}}</td>
         <td>{{animal.favfood.name}}</td>
-         <td> <a id="link" ng-href="{{animal.link}}">{{animal.link}}</a> </td>
-      
-      </tr>
-      
+         <td> <a id="link" ng-href="{{animal.link}}">{{animal.link}}</a> </td> 
+      </tr>    
     </tbody>
   </table>
 </div>
-
 </div>

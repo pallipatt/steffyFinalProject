@@ -1,31 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-<meta charset="utf-8">
-
-<title>Zoo Keeper</title>
-
-<link rel="stylesheet" href="../css/bootstrap.css">
-<link rel="stylesheet" href="../css/site.css">
-
+	<meta charset="utf-8">
+	<title>Zoo Keeper</title>
+	<link rel="stylesheet" href="../css/bootstrap.css">
+	<link rel="stylesheet" href="../css/site.css">
 </head>
 <body ng-app="app">
 	<div class="navbar navbar-inverse navbar-fixed-top" >
-
 		<div class="container-fluid">
-
 			<div class="navbar-header">
 
-				<button type="button" class="navbar-toggle"
-					ng-click="isCollapsed = !isCollapsed">
-					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
+				<button type="button" class="navbar-toggle"ng-click="isCollapsed = !isCollapsed">
+					<span class="icon-bar"></span>
+					 <span class="icon-bar"></span> 
+					 <span class="icon-bar"></span>
 				</button>
 				<div class="navbar-brand">Zoo Keeper</div>
 			</div>
-			<div class="collapse navbar-collapse" ng-init="isCollapsed = true"
-				uib-collapse="isCollapsed" ng-click="isCollapsed = !isCollapsed">
+			<div class="collapse navbar-collapse" ng-init="isCollapsed = true" uib-collapse="isCollapsed" ng-click="isCollapsed = !isCollapsed">
 				<ul class="nav navbar-nav">
 					<li> <a ui-sref="schedule" ng-cloak>Schedule</a></li>
 					<li><a ui-sref="enclosure" ng-cloak>Enclosure Details</a></li>
@@ -38,7 +31,7 @@
 	</div>
 	<section class="content">
 		<div class="container">
-			<div ui-view> </div>
+		<div ui-view> </div>
 		</div>
 	</section>
 
@@ -74,7 +67,5 @@
 	<script type="text/javascript" src="../app/service/enclosureService.js"></script>
 	<script type="text/javascript" src="../app/service/scheduleService.js"></script>
 	
-
 </body>
-
 </html>

@@ -54,4 +54,10 @@ public class EnclosureService {
 		enclosureDao.update(enclosure);
 	}
 
+	public void delete(Integer id) {
+		enclosureDao.delete(id);
+		
+	}
+
+
 }

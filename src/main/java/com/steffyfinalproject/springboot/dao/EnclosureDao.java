@@ -5,6 +5,11 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
 import org.springframework.stereotype.Component;
 import com.steffyfinalproject.springboot.entities.Condition;
 import com.steffyfinalproject.springboot.entities.Enclosure;
@@ -26,7 +31,7 @@ public class EnclosureDao {
 	 * @return
 	 */
 	public List<Condition> getAllCondition() {
-		
+
 		return em.createQuery("SELECT c FROM Condition c", Condition.class).getResultList();
 	}
 
@@ -34,7 +39,6 @@ public class EnclosureDao {
 	 * Function to add
 	 */
 	public void add(Enclosure enclosure) {
-		System.out.println("dao-------------->");
 		em.flush();
 		em.persist(enclosure);
 	}
@@ -61,6 +65,11 @@ public class EnclosureDao {
 	public void update(Enclosure enclosure) {
 		em.merge(enclosure);
 		em.flush();
+	}
+
+	public void delete(Integer id) {
+		Enclosure e = getEnclosureByID(id);
+		em.remove(e);
 	}
 
 }

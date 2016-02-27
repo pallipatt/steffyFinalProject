@@ -35,9 +35,6 @@ public class Enclosure {
 	@JoinColumn(name = "conditionid" , nullable=false)
 	private Condition condition;
 	
-//	@Column(name = "time", nullable=false )
-//	private java.sql.Time time;
-	
 	@Column(name = "time", nullable=false )
 	private java.util.Date time;
 	
