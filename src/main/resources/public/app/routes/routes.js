@@ -3,12 +3,7 @@ angular.module('app').config(['$stateProvider', '$urlRouterProvider', function($
 	$urlRouterProvider.otherwise('/main');
 
 $stateProvider
-/*  .state('home', {
-    url: '/home',
-    templateUrl: 'views/partials/home.html',
-    controller: 'homeCtrl'
-  })
-  */
+
 .state('enclosure', {
 	url: '/enclosure',
 	templateUrl: 'views/partials/enclosure.html',
@@ -30,7 +25,7 @@ $stateProvider
 .state('updateFavFood', {
 	url: '/updateFavFood/:foodid',
 	templateUrl: 'views/partials/updatefood.html',
-	controller: "foodupdateCtrl",
+	controller: "foodUpdateCtrl",
 	resolve :{
 		 getfavFoodDetailsID: ['foodService', '$stateParams',function(foodService, $stateParams) {
 		        return foodService.getFavFoodDetailsID($stateParams.foodid);   	
@@ -47,7 +42,7 @@ $stateProvider
 .state('updateAnimal', {
 	url: '/updateAnimal/:animalid',
 	templateUrl: 'views/partials/updateanimal.html',
-	controller: "animalupdateCtrl",
+	controller: "animalUpdateCtrl",
 	resolve :{
 		 getAnimalDetailsID: ['animalService', '$stateParams',function(animalService, $stateParams) {
 		        return animalService.getAnimalDetailsID($stateParams.animalid);   	
@@ -55,6 +50,23 @@ $stateProvider
 		      getFavFood: ['animalService',function(animalService){
 		    	  return animalService.getAllFavFood();
 		      }],	     
+	}
+})
+
+.state('updateEnclosure', {
+	url: '/updateEnclosure/:enclosureid',
+	templateUrl: 'views/partials/updateEnclosure.html',
+	controller: "enclosureUpdateCtrl",
+	resolve :{
+		 getEnclosureDetailsID: ['enclosureService', '$stateParams',function(enclosureService, $stateParams) {
+		        return enclosureService.getEnclosureID($stateParams.enclosureid);   	
+		      }],
+		      getCondiiton: ['enclosureService',function(enclosureService){
+		    	  return enclosureService.getAllCondition();
+		      }],	
+		      getAnimal: ['enclosureService',function(enclosureService){
+  	 			 return enclosureService.getAllAnimalDetails();
+		      }],
 	}
 });
 

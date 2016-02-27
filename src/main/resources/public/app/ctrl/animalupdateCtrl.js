@@ -1,4 +1,4 @@
-angular.module('app').controller('animalupdateCtrl', ['$scope', '$state','animalService','getAnimalDetailsID','getFavFood',
+angular.module('app').controller('animalUpdateCtrl', ['$scope', '$state','animalService','getAnimalDetailsID','getFavFood',
                                    function( $scope, $state, animalService, getAnimalDetailsID, getFavFood) {
 console.log("inside update anialstate ");
 	$scope.favfoods = getFavFood.data;
@@ -8,8 +8,8 @@ console.log("inside update anialstate ");
 	$scope.updateAnimal.sname =  getAnimalDetailsID.data.sname;
 	$scope.updateAnimal.link =  getAnimalDetailsID.data.link;
 	$scope.updateAnimal.favfood =  getAnimalDetailsID.data.favfood.name;
-	$scope.fave=$scope.updateAnimal.favfood ;
-//	console.log("updateAnimal.favfood.favfoodid[$index]"+ $scope.updateAnimal.favfood);
+	$scope.fave=$scope.updateAnimal.favfood;
+	
 	  /**
 	   * updates food from the web site 
 	   */
@@ -22,11 +22,5 @@ console.log("inside update anialstate ");
 	            
 	        });	
 		};
-//		
-//	animalService.getAllAnimalDetails().then(function(response){		 
-//	  $scope.animals = response.data;
-//	  console.log("responce " +response);
-//  });
-	
 	
 }]);

@@ -45,7 +45,7 @@ public class FoodService {
 	}
 
 	/**
-	 * Service to get details about favorite food
+	 * Service to get details about all favorite food
 	 */
 	public List<FavFood> getAllFavFood() {
 		return foodDao.getFavFoodDetails();
@@ -63,6 +63,5 @@ public class FoodService {
 	 */
 	public void update(FavFood favfood) {
 		foodDao.updateFood(favfood);
-
 	}
 }

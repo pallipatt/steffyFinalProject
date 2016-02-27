@@ -27,7 +27,6 @@
 			<div class="collapse navbar-collapse" ng-init="isCollapsed = true"
 				uib-collapse="isCollapsed" ng-click="isCollapsed = !isCollapsed">
 				<ul class="nav navbar-nav">
-					<li><a ui-sref="home"  ng-cloak>Home</a></li>
 					<li><a ui-sref="enclosure" ng-cloak>Enclosure Details</a></li>
 					<li><a ui-sref="animal" ng-cloak>Animal Details</a></li>
 					<li><a ui-sref="food" ng-cloak>Food Details</a></li>
@@ -38,7 +37,6 @@
 	</div>
 	<section class="content">
 		<div class="container">
-								<!--  background imge  -->           <!--      //TODO  check  -->
 			<div ui-view> </div>
 		</div>
 	</section>
@@ -61,14 +59,16 @@
 	
 	<!-- controllers -->
 	<script type="text/javascript" src="../app/ctrl/foodCtrl.js"></script>
-	<script type="text/javascript" src="../app/ctrl/foodupdateCtrl.js"></script>
+	<script type="text/javascript" src="../app/ctrl/foodUpdateCtrl.js"></script>
 	<script type="text/javascript" src="../app/ctrl/animalCtrl.js"></script>
-	<script type="text/javascript" src="../app/ctrl/animalupdateCtrl.js"></script>
-
+	<script type="text/javascript" src="../app/ctrl/animalUpdateCtrl.js"></script>
+	<script type="text/javascript" src="../app/ctrl/enclosureCtrl.js"></script>
+	<script type="text/javascript" src="../app/ctrl/enclosureUpdateCtrl.js"></script> 
+	
 	<!--  services -->
 	<script type="text/javascript" src="../app/service/foodService.js"></script>
 	<script type="text/javascript" src="../app/service/animalService.js"></script>
-
+	<script type="text/javascript" src="../app/service/enclosureService.js"></script>
 
 </body>
 

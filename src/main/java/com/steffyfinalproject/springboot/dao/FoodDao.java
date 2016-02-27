@@ -8,7 +8,6 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Component;
 
-import com.steffyfinalproject.springboot.entities.Animal;
 import com.steffyfinalproject.springboot.entities.Catagory;
 import com.steffyfinalproject.springboot.entities.FavFood;
 import com.steffyfinalproject.springboot.entities.Vendor;
@@ -49,7 +48,6 @@ public class FoodDao {
 	public void add(FavFood favfood) {
 		em.flush();
 		em.persist(favfood);
-
 	}
 
 	/**
@@ -67,10 +65,13 @@ public class FoodDao {
 				.setParameter("favfoodid", favfoodid).getSingleResult();
 	}
 
+	/**
+	 * Function to update
+	 * 
+	 */
 	public void updateFood(FavFood favfood) {
 		em.merge(favfood);
 		em.flush();
-		
 	}
 
 }

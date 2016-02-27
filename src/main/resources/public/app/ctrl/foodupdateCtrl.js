@@ -1,4 +1,4 @@
-angular.module('app').controller('foodupdateCtrl', ['$scope', '$state','foodService','getfavFoodDetailsID','getCatagory','getVendor',
+angular.module('app').controller('foodUpdateCtrl', ['$scope', '$state','foodService','getfavFoodDetailsID','getCatagory','getVendor',
                                    function( $scope, $state, foodService, getfavFoodDetailsID, getCatagory,getVendor) {
 
 	$scope.catagory = getCatagory.data;

@@ -104,10 +104,10 @@ public class FavFood {
 		if (!(obj instanceof FavFood)) {
 			return false;
 		}
-		FavFood lineItem = (FavFood) obj;
+		FavFood favfood = (FavFood) obj;
 
 		EqualsBuilder builder = new EqualsBuilder();
-		builder.append(this.favfoodid, lineItem.favfoodid);
+		builder.append(this.favfoodid, favfood.favfoodid);
 		return builder.isEquals();
 
 	}

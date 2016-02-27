@@ -54,7 +54,7 @@ public class FoodWebServices {
 	}
 
 	/**
-	 * Web service to get details about Fav Food
+	 * Web service to get details about all Fav Food
 	 */
 	@RequestMapping(value = "/food/favfood", method = RequestMethod.GET)
 	public List<FavFood> getfavFoodDetails() {

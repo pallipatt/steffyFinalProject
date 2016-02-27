@@ -24,7 +24,7 @@ public class Animal {
 	@Column(name = "cname", nullable=false)
 	private String cname;
 	
-	@Column(name = "csname" , nullable=false)
+	@Column(name = "sname" , nullable=false)
 	private String sname;
 
 	@Column(name = "link", nullable=false)
