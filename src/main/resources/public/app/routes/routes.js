@@ -1,6 +1,6 @@
 angular.module('app').config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
 
-	$urlRouterProvider.otherwise('/main');
+	$urlRouterProvider.otherwise('/schedule');
 
 $stateProvider
 
@@ -20,6 +20,17 @@ $stateProvider
 	url: '/food',
 	templateUrl: 'views/partials/food.html',
 	controller: "foodCtrl"
+})
+
+.state('schedule', {
+	url: '/schedule',
+	templateUrl: 'views/partials/schedule.html',
+	controller: "scheduleCtrl",
+	resolve :{
+		 getschedules: ['scheduleService', function(scheduleService) {
+		        return scheduleService.getAllschedule();   	
+		      }],
+	}
 })
 
 .state('updateFavFood', {

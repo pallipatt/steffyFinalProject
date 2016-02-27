@@ -7,5 +7,7 @@ INSERT INTO favfood ( name, catagory_id, vendor_id) VALUES( 'GIRAFFE - FARE', 5,
 INSERT INTO favfood ( name, catagory_id, vendor_id) VALUES( 'Carnivore Feed', 2, 6);
 INSERT INTO favfood ( name, catagory_id, vendor_id) VALUES( 'Banana', 3, 2);
 
-INSERT INTO animal ( cname, link, sname, favfoodid) VALUES( 'Monkey', 'https://en.wikipedia.org/wiki/Monkey', 'Cercopithecidae', 4),('Giraffe','https://en.wikipedia.org/wiki/Giraffe','Giraffa camelopardalis',2);
---INSERT INTO public.enclosure( count, name, "time", animalid, conditionid) VALUES (1, 'monkey', '04:04 AM', 1, 1);
+INSERT INTO animal ( cname, link, sname, favfoodid) VALUES( 'Monkey', 'https://en.wikipedia.org/wiki/Monkey', 'Cercopithecidae', 4),('Giraffe','https://en.wikipedia.org/wiki/Giraffe','Giraffa camelopardalis',2),('Lion','https://en.wikipedia.org/wiki/Lion','Panthera leo',3),('Flamingo','https://en.wikipedia.org/wiki/American_flamingo','Phoenicopteridae',1);
+
+INSERT INTO public.enclosure( count, name, "time", animalid, conditionid) VALUES (2, 'MonkeyHouse', '1970-01-01 11:11:00', 1, 1),(15,'FlamingoPond','1970-01-01 16:00:00',4,4 );
+
