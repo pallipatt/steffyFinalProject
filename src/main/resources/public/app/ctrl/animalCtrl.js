@@ -15,7 +15,6 @@ angular.module('app').controller('animalCtrl', ['$scope', '$state','animalServic
 	   * add animal details from the web site 
 	   */
 	 $scope.addAnimalDetails = function(){
-		
 			animalService.createAnimalDetails($scope.animal).then(function(){
 				 $state.reload();
 	        }, function(response){

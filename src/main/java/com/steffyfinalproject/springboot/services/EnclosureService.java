@@ -12,11 +12,32 @@ import com.steffyfinalproject.springboot.entities.Enclosure;
 @Service
 public class EnclosureService {
 
-	@Autowired
+	public String charsRegex = "[a-zA-z\\s]*";
+	public String numRegex = "\\d+";
+
+@Autowired
 	EnclosureDao enclosureDao;
 
 	public void setEnclosureDao(EnclosureDao enclosureDao) {
 		this.enclosureDao = enclosureDao;
+	}
+
+	/**
+	 * validation before entering to database
+	 * 
+	 * @param animal
+	 * @return
+	 */
+	public Boolean validation(Enclosure enclosure) {
+
+		String name = enclosure.getName();
+		Integer count = enclosure.getCount();
+		if (name.matches(charsRegex) && count.toString().matches(numRegex) ) {
+			System.out.println("sucess");
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	/**
@@ -30,7 +51,11 @@ public class EnclosureService {
 	 * Service to add enclosure
 	 */
 	public void addEnclosure(Enclosure enclosure) {
-		enclosureDao.add(enclosure);
+		Boolean validation = validation(enclosure);
+		if (validation) {
+			enclosureDao.add(enclosure);
+		}
+
 	}
 
 	/**
@@ -51,13 +76,15 @@ public class EnclosureService {
 	 * Service to update details
 	 */
 	public void update(Enclosure enclosure) {
-		enclosureDao.update(enclosure);
+		Boolean validation = validation(enclosure);
+		if (validation) {
+			enclosureDao.update(enclosure);
+		}
 	}
 
 	public void delete(Integer id) {
 		enclosureDao.delete(id);
-		
-	}
 
+	}
 
 }

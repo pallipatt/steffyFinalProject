@@ -6,10 +6,10 @@ angular.module('app').controller('foodUpdateCtrl', ['$scope', '$state','foodServ
 	$scope.updatefood = {};
 	$scope.updatefood = getfavFoodDetailsID.data;
 	$scope.updatefood.name = getfavFoodDetailsID.data.name;
-	$scope.updatefood.catagory = getCatagory.data.name;
-	$scope.updatefood.vendor= getVendor.data.name;
-	$scope.vendor= $scope.updatefood.vendor;
-	$scope.catagory = $scope.updatefood.catagory;
+	$scope.updatefood.catagory = getfavFoodDetailsID.data.catagory.name;
+	$scope.updatefood.vendor= getfavFoodDetailsID.data.vendor.name;
+	$scope.catagoryName = $scope.updatefood.catagory;
+	$scope.vendorName = $scope.updatefood.vendor
 	  /**
 	   * updates food from the web site 
 	   */

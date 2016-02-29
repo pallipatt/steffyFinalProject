@@ -109,7 +109,6 @@ public class FavFood {
 		EqualsBuilder builder = new EqualsBuilder();
 		builder.append(this.favfoodid, favfood.favfoodid);
 		return builder.isEquals();
-
 	}
 
 }

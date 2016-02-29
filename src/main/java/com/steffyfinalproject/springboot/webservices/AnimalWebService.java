@@ -26,7 +26,7 @@ public class AnimalWebService {
 	 * Web service to Creates Animal Details
 	 */
 	@RequestMapping(value = "/animal/createanimal", method = RequestMethod.POST)
-	public void createAnimal(@RequestBody Animal animal) {
+	public void  createAnimal(@RequestBody Animal animal) {
 		animalService.addAnimal(animal);
 	}
 

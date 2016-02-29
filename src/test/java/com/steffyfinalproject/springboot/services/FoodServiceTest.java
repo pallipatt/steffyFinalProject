@@ -1,5 +1,7 @@
 package com.steffyfinalproject.springboot.services;
 
+import static org.junit.Assert.*;
+import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -19,12 +21,15 @@ public class FoodServiceTest {
 
 	private FoodService foodService;
 	private FoodDao foodDao;
-	// private List<Vendor> vendors;
-
+	private FavFood mockfavfood;
+	private String mockString;
+	private String mockRegex;
+	
 	@Before
 	public void setup() {
 		foodService = new FoodService();
 		foodDao = mock(FoodDao.class);
+		foodService.setFoodDao(foodDao);
 	}
 
 	@Test
@@ -45,26 +50,50 @@ public class FoodServiceTest {
 	}
 
 	@Test
-	public void addFoodTest() {
-
-	}
-
-	@Test
 	public void getAllFavFoodTest() {
 		List<FavFood> favfood = new ArrayList<FavFood>();
 		when(foodDao.getFavFoodDetails()).thenReturn(favfood);
 		foodDao.getFavFoodDetails();
 		verify(foodDao, times(1)).getFavFoodDetails();
 	}
+
+	@Test
+	public void validationTest() {
+		
+		
+//		FavFood mockfavfood = mock(FavFood.class);
+//	//	String mockString = mock(String.class);
+//		//String mockRegex = mock(String.class);
+//		
+//		when(mockfavfood.getName()).thenReturn("abc");
+//		when(mockString.matches("abc")).thenReturn(true);
+	}
 	
+	@Test
+	public void addFoodSucessTest() {
+		String regexp = "[a-zA-z\\s]*";
+		FavFood mockfavfood = mock(FavFood.class);
+	//	FavFood mockfavfood =new FavFood();
+		
+		when(mockfavfood.getName()).thenReturn("abc");
+	//	when(mockDataValidator.checkType(anyString())).thenReturn(mockDataValidator);
+		when("abc".matches(regexp)).thenReturn(true);
+		
+		Boolean isSucess = foodService.validation(mockfavfood);
+		assertTrue( isSucess);
+		
+	}
+
 	@Test
 	public void getFoodByIdTest() {
 		
-	
+		foodService.getFoodById(null);
+		verify(foodDao, times(1)).getFavFoodByID(null);
 	}
-	
-	@Test 
-	public  void updateTest(){
-		
+
+	@Test
+	public void updateTest() {
+
 	}
+
 }

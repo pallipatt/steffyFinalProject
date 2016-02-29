@@ -31,7 +31,7 @@ public class AnimalDao {
 	/**
 	 * Function to get all Animal Details
 	 */
-	public List<Animal> getAnimaldetails() {
+	public List<Animal> getAnimalDetails() {
 		return em.createQuery("SELECT a FROM Animal a", Animal.class).getResultList();
 	}
 	/**

@@ -1,5 +1,6 @@
 package com.steffyfinalproject.springboot.dao;
 
+import static org.mockito.Matchers.anyInt;
 import static org.mockito.Matchers.anyString;
 import static org.mockito.Matchers.eq;
 import static org.mockito.Mockito.mock;
@@ -81,4 +82,31 @@ public class FoodDaoTest {
 
 	}
 	
+	@Test
+	public void getFavFoodByIDTest(){
+		
+		@SuppressWarnings("unchecked")
+		TypedQuery<FavFood> mockTypedQuery = mock(TypedQuery.class);
+		FavFood expected = new FavFood();
+		
+		when(mockEm.createQuery(anyString(), eq(FavFood.class))).thenReturn(mockTypedQuery);
+		when(mockTypedQuery.setParameter(anyString(), anyInt())).thenReturn(mockTypedQuery);
+
+		when(mockTypedQuery.getSingleResult()).thenReturn(expected);
+		foodDao.getFavFoodByID(1);
+		verify(mockTypedQuery).setParameter(eq("favfoodid"), eq(1));
+		
+	}
+	
+	@Test
+	public void addTest(){
+		foodDao.add(null);
+		verify(mockEm).persist(null);
+	}
+	
+	@Test
+	public void updateTest(){
+		foodDao.updateFood(null);
+		verify(mockEm).merge(null);
+	}
 }

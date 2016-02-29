@@ -6,7 +6,7 @@
 
  <!-- Area for defining the Food name -->
  <label for="food-name">
-        <input type= "text"  ng-model="food.name" placeholder="Food Name" name="food-name" required ng-pattern="/^[a-zA-Z]*$/" />
+        <input type= "text"  ng-model="food.name" placeholder="Food Name" name="food-name" ng-pattern="/^[a-zA-Z\s]*$/" required />
         <!-- <p ng-show="userForm.food.name.$invalid && !userForm.food.name.$pristine" class="help-block">Food name is required.</p> -->
         </label>
 
