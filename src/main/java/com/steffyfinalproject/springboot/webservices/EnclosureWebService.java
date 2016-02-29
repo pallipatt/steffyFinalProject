@@ -67,7 +67,6 @@ public class EnclosureWebService {
  */
 	@RequestMapping(value = "/enclosure/deleteEnclosure/{id}", method = RequestMethod.PUT)
 	public void deleteEnclosure(@PathVariable Integer id) {
-		System.out.println("inside Webservices services delete --------==========================>  ");
 		enclosureService.delete(id);
 	}
 	

@@ -49,10 +49,11 @@ public class AnimalWebServiceTest {
 	}
 
 	@Test
-	public void getDetailsTest() {
+	public void getAnimalDetailsTest() {
 		List<Animal> e = new ArrayList<Animal>();
 		when(mockService.getAllAnimalDetails()).thenReturn(e);
-		mockService.getAllAnimalDetails();
+		mockWebService.getAnimalDetails();
+	//	mockService.getAllAnimalDetails();
 		verify(mockService).getAllAnimalDetails();
 	}
 	
