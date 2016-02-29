@@ -3,7 +3,7 @@ INSERT INTO vendor ( name) VALUES( 'Lafeber Company'), ('Bravo Packing, Inc.'), 
 INSERT INTO condition (name) VALUES( 'Good'), ('Bad'),('Criminal'), ('Fence'), ('Broken');
 
 INSERT INTO favfood ( name, catagory_id, vendor_id) VALUES( 'Premium Daily Diet', 5, 1);
-INSERT INTO favfood ( name, catagory_id, vendor_id) VALUES( 'GIRAFFE - FARE', 5, 2);
+INSERT INTO favfood ( name, catagory_id, vendor_id) VALUES( 'GIRAFFE FARE', 5, 2);
 INSERT INTO favfood ( name, catagory_id, vendor_id) VALUES( 'Carnivore Feed', 2, 6);
 INSERT INTO favfood ( name, catagory_id, vendor_id) VALUES( 'Banana', 3, 2);
 

@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -18,10 +19,13 @@ import com.steffyfinalproject.springboot.services.FoodService;
 public class FoodWebServicesTest {
 
 	private FoodService mockFoodService;
-
+	private FoodWebServices mockWebService;
+	
 	@Before
 	public void setup() {
 		mockFoodService = mock(FoodService.class);
+		mockWebService = new FoodWebServices();
+		mockWebService.setFoodService(mockFoodService);
 	}
 
 	@Test
@@ -42,7 +46,8 @@ public class FoodWebServicesTest {
 
 	@Test
 	public void createFoodTest() {
-
+		mockWebService.createFood(null);
+		verify(mockFoodService, times(1)).addFood(null);
 	}
 
 	@Test
@@ -55,11 +60,13 @@ public class FoodWebServicesTest {
 	
 	@Test
 	public void getFoodByIdTest() {
-
+		mockWebService.getFoodById(null);
+		verify(mockFoodService, times(1)).getFoodById(null);
 	}
 	@Test
 	public void putfoodTest() {
-
+		mockWebService.putFood(null);
+		verify(mockFoodService, times(1)).update(null);
 	}
 	
 }
