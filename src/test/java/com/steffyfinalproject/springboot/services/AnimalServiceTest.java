@@ -31,7 +31,7 @@ public class AnimalServiceTest {
 	public void getAllAnimalTest() {
 		List<Animal> animal = new ArrayList<Animal>();
 		when(dao.getAnimalDetails()).thenReturn(animal);
-		dao.getAnimalDetails();
+		service.getAllAnimalDetails();
 		verify(dao, times(1)).getAnimalDetails();
 
 	}

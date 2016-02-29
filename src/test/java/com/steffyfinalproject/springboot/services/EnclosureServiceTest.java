@@ -32,7 +32,7 @@ public class EnclosureServiceTest {
 	public void getConditionTest() {
 		List<Condition> condition = new ArrayList<Condition>();
 		when(dao.getAllCondition()).thenReturn(condition);
-		dao.getAllCondition();
+		service.getCondition();
 		verify(dao, times(1)).getAllCondition();
 
 	}
@@ -41,7 +41,7 @@ public class EnclosureServiceTest {
 	public void getAllEnclosureTest() {
 		List<Enclosure> enclosure = new ArrayList<Enclosure>();
 		when(dao.getEnclosureDetails()).thenReturn(enclosure);
-		dao.getEnclosureDetails();
+		service.getAllEnclosure();
 		verify(dao, times(1)).getEnclosureDetails();
 
 	}

@@ -16,7 +16,7 @@ import com.steffyfinalproject.springboot.entities.Vendor;
 @Service
 public class FoodService {
 
-	public String regexp = "[a-zA-z\\s]*";
+	private String regexp = "[a-zA-z\\s]*";
 
 	@Autowired
 	FoodDao foodDao;

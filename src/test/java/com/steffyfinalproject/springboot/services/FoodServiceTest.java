@@ -33,7 +33,7 @@ public class FoodServiceTest {
 	public void getVendorsTest() {
 		List<Vendor> vendors = new ArrayList<Vendor>();
 		when(foodDao.getAllVendors()).thenReturn(vendors);
-		foodDao.getAllVendors();
+		foodService.getVendors();
 		verify(foodDao, times(1)).getAllVendors();
 
 	}
@@ -42,7 +42,7 @@ public class FoodServiceTest {
 	public void getCategoryTest() {
 		List<Catagory> catagory = new ArrayList<Catagory>();
 		when(foodDao.getAllCategory()).thenReturn(catagory);
-		foodDao.getAllCategory();
+		foodService.getCategory();
 		verify(foodDao, times(1)).getAllCategory();
 	}
 
@@ -50,7 +50,7 @@ public class FoodServiceTest {
 	public void getAllFavFoodTest() {
 		List<FavFood> favfood = new ArrayList<FavFood>();
 		when(foodDao.getFavFoodDetails()).thenReturn(favfood);
-		foodDao.getFavFoodDetails();
+		foodService.getAllFavFood();
 		verify(foodDao, times(1)).getFavFoodDetails();
 	}
 

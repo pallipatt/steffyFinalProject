@@ -37,7 +37,7 @@ public class ScheduleServiceTest {
 	public void getCategoryTest() {
 		List<Enclosure> catagory = new ArrayList<Enclosure>();
 		when(dao.getAllSchedule()).thenReturn(catagory);
-		dao.getAllSchedule();
+		service.getschedule();
 		verify(dao, times(1)).getAllSchedule();
 	}
 

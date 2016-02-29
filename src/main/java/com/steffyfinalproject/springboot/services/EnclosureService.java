@@ -12,8 +12,8 @@ import com.steffyfinalproject.springboot.entities.Enclosure;
 @Service
 public class EnclosureService {
 
-	public String charsRegex = "[a-zA-z\\s]*";
-	public String numRegex = "\\d+";
+	private String charsRegex = "[a-zA-z\\s]*";
+	private String numRegex = "\\d+";
 
 @Autowired
 	EnclosureDao enclosureDao;
