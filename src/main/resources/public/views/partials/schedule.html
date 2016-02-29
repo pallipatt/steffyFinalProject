@@ -1,0 +1,21 @@
+<div class="container">
+  <!-- <h2>Favorite food </h2>  -->           
+  <table class="table table-hover"  ng-model='roleCheck' >
+    <thead>
+      <tr>
+        <th>Enclosure Name</th>
+        <th>Animal Name</th>
+        <th>Favorite Food</th>
+        <th> Time </th>
+      </tr>
+    </thead>
+    <tbody> 
+      <tr ng-repeat="s in schedules" > 
+        <td>{{s.name}}</td>
+        <td>{{s.animal.cname}}</td>
+        <td>{{s.animal.favfood.name}}</td>
+        <td>{{s.time | date:'HH:mm'}}</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>

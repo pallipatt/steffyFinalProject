@@ -1,0 +1,30 @@
+<div class="container">
+  <form name="updateForm" id="update-AnimalList" class="editAnimalForm col-md-offset-3 col-md-6" ng-submit="updateAnimal()" novalidate="">
+ 	<fieldset class="form-group">
+ 		<label for="enclosure-name">Enclosure Name </label> 
+   		<input type="text"  class="form-control" ng-model="updateEnclosure.name"  name="enclosure-name" required ng-pattern="/^[a-zA-Z\s]*$/" />
+     
+		<label for="Animal-Name">Animal: </label>( {{animal}} )
+        <select class="form-control" name="animal"  id=""animalname ng-model="updateEnclosure.animal" ng-options="animal as animal.cname for animal in animals "  required></select>           
+
+ 		<label for="enclosure-count"> Animal Count </label> 
+        <input type= "number" class="form-control"  ng-model="updateEnclosure.count"  name="enclosure-count" required min="0" /> 
+       
+   		<label for="enclosure-Time">Feeding Time </label> ( {{updateEnclosure.time | date:'HH:mm'}} ) 
+        <input type= "time" class="form-control"  ng-model="updateEnclosure.time "  name="enclosure-time" required /> 
+       
+        <label for="enclosure-condition">Condition: </label> ({{condition}})
+        <select name="condition" class="form-control" ng-model="updateEnclosure.condition" ng-options="condition as condition.name for condition in conditions " required></select>
+       
+   		<label>
+ 		<button type="button" type="submit" ng-disabled="updateForm.$invalid"  ng-click="updateEnclosureDetails()">UPDATE </button>
+		</label>   
+		
+		<label>
+ 		<button type="button" type="submit"   ng-click="deleteEnclosureDetails()">DELETE </button>
+		</label>  
+		
+	</fieldset>
+   </form>
+   </div>
+   
