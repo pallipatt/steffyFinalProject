@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="0" passed="0">
+<testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="6" started-at="2016-02-28T08:20:09Z" finished-at="2016-02-28T08:20:09Z">
+  <suite name="Default suite" duration-ms="4238" started-at="2016-03-21T21:24:34Z" finished-at="2016-03-21T21:24:38Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="6" started-at="2016-02-28T08:20:09Z" finished-at="2016-02-28T08:20:09Z">
+    <test name="Default test" duration-ms="4238" started-at="2016-03-21T21:24:34Z" finished-at="2016-03-21T21:24:38Z">
+      <class name="com.steffyfinalproject.springboot.restassured.RestAssured">
+        <test-method status="PASS" signature="getFoodTest()[pri:0, instance:com.steffyfinalproject.springboot.restassured.RestAssured@54a097cc]" name="getFoodTest" duration-ms="3969" started-at="2016-03-21T14:24:34Z" finished-at="2016-03-21T14:24:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getFoodTest -->
+        <test-method status="PASS" signature="postCreateFood()[pri:0, instance:com.steffyfinalproject.springboot.restassured.RestAssured@54a097cc]" name="postCreateFood" duration-ms="220" started-at="2016-03-21T14:24:38Z" finished-at="2016-03-21T14:24:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- postCreateFood -->
+      </class> <!-- com.steffyfinalproject.springboot.restassured.RestAssured -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

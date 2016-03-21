@@ -79,7 +79,40 @@
 			<artifactId>selenium-chrome-driver</artifactId>
 			<version>2.48.2</version>
 		</dependency>
-		
+		   <dependency>
+      <groupId>com.jayway.restassured</groupId>
+      <artifactId>rest-assured</artifactId>
+      <version>2.9.0</version>
+      <scope>test</scope>
+</dependency>
+<dependency>
+      <groupId>com.jayway.restassured</groupId>
+      <artifactId>xml-path</artifactId>
+      <version>2.9.0</version>
+</dependency>
+<dependency>
+      <groupId>com.jayway.restassured</groupId>
+      <artifactId>json-schema-validator</artifactId>
+      <version>2.9.0</version>
+      <scope>test</scope>
+</dependency>
+<dependency>
+      <groupId>com.jayway.restassured</groupId>
+      <artifactId>spring-mock-mvc</artifactId>
+      <version>2.9.0</version>
+      <scope>test</scope>
+</dependency>
+<dependency>
+    <groupId>com.jayway.restassured</groupId>
+    <artifactId>scala-support</artifactId>
+    <version>2.9.0</version>
+    <scope>test</scope>
+</dependency>
+<dependency>
+      <groupId>com.jayway.restassured</groupId>
+      <artifactId>json-path</artifactId>
+      <version>2.9.0</version>
+</dependency>
 
 	</dependencies>
 

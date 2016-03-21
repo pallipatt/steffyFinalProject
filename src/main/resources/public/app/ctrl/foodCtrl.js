@@ -23,13 +23,14 @@ angular.module('app').controller('foodCtrl', ['$scope', '$state','foodService',
 	*/
 	 foodService.getAllVendors().then(function(response){	
 			  $scope.vendors = response.data;
-			  console.log($scope.vendors);
+			  
 	 });
 	  /**
 	   * add food from the web site 
 	   */
 	 $scope.addFood = function(){		
-			foodService.createFood($scope.food).then(function(){
+			foodService.createFood($scope.food).then(function(e){	
+				console.log(e);
 				 $state.reload();
 	        }, function(response){
 	            console.log(response);

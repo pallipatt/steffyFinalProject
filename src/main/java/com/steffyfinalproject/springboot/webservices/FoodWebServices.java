@@ -49,7 +49,6 @@ public class FoodWebServices {
 	 */
 	@RequestMapping(value = "/food/createfood", method = RequestMethod.POST)
 	public void createFood(@RequestBody FavFood favfood) {
-		System.out.println("inside Food Webservices services ");
 		foodService.addFood(favfood);
 	}
 
